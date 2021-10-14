@@ -10,7 +10,20 @@ function recursive(p, n) {
   return q
 }
 
+function bottomUpCutRod(p, n) {
+  const revenues = new Array(11).fill(0);
+  for (let i=1; i<=n; i++) {
+    let q = -Infinity;
+    for (let j=1; j<=i; j++) {
+      q = Math.max(q, p[j] + revenues[i - j]);
+    }
+    revenues[i] = q
+  }
+  return revenues[n]
+}
+
 module.exports = {
   p,
-  recursive
+  recursive,
+  bottomUpCutRod
 }

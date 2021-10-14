@@ -1,8 +1,9 @@
-Context: positive integer i denotes the length of a steel rod, 
+**Context:**  
+positive integer i denotes the length of a steel rod, 
 p is an array so that p[1...n] denotes the prices for the length i.
 For a positive integer n, cut it into i's, find the maximum revenue.
 
-Recursive top-down implementation (inefficient):
+**Recursive top-down implementation (inefficient):**
 ```
 CUT-ROD(p, n)
 if n == 0
@@ -12,7 +13,7 @@ for i = 1 to n
     q = max(q, p[i] + CUT-ROD(p, n - i))
 ``` 
 
-To optimize:
+**To optimize:**
 1. top-down with memoization -> save the subproblem results into a hash table.
 2. bottom-up -> sort the
                 subproblems by size and solve them in size order, smallest first.
