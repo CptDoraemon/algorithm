@@ -3,7 +3,7 @@ const {
 } = require('./longest-common-subsequence');
 
 const deepCompareArrayIgnoringOrder = (A, B) => {
-  expect(A.sort()).toEqual(B.sort())
+  expect(A.slice().sort()).toEqual(B.slice().sort())
 }
 
 test('deep compare', () => {
@@ -16,6 +16,6 @@ test('a', () => {
   const X = ['A', 'B', 'C', 'B', 'D', 'A', 'B'];
   const Y = ['B', 'D', 'C', 'A', 'B', 'A'];
   const LCS = recursive(X, Y);
-  const solution = [['B', 'C', 'B', 'A'], ['B', 'D', 'A', 'B']]
+  const solution = [['B', 'C', 'B', 'A'], ['B', 'C', 'A', 'B'], [ 'B', 'D', 'A', 'B' ]];
   deepCompareArrayIgnoringOrder(LCS, solution)
 })
