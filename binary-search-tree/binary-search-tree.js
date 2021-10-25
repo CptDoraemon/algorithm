@@ -36,6 +36,10 @@ const treeInsert = (tree, value) => {
   return tree
 }
 
+const treeDelete = () => {
+
+}
+
 module.exports = {
   TreeNode,
   treeInsert
