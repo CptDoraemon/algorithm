@@ -53,8 +53,13 @@ const buildMaxHeap = (A) => {
 
 // O(nlg n)
 const heapSort = (A) => {
-  // const maxHeapified = buildMaxHeap(A);
-  // for (let i=A.length-1; i>=1; i--)
+  let maxHeapified = buildMaxHeap(A);
+  const sorted = [];
+  while (maxHeapified.length > 0) {
+    sorted.push(maxHeapified.shift());
+    maxHeapified(maxHeapified, 1)
+  }
+  return sorted
 }
 
 module.exports = {
